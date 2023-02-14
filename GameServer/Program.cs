@@ -2,7 +2,6 @@ WebApplication app = WebApplication.Create();
 
 Position paulCords = new(100, 10);
 Position samuelCords = new(10, 10);
-Position dummy = new();
 
 app.Urls.Add("http://localhost:3000");
 app.Urls.Add("http://*:3000");
@@ -23,7 +22,6 @@ app.MapPost("/Samuel/Set/", SetSamuel);
 void SetSamuel(Position p)
 {
     samuelCords = p;
-    dummy = p;
 }
 void SetPaul(Position p)
 {
@@ -32,8 +30,7 @@ void SetPaul(Position p)
 
 app.Run();
 
-dynamic Answer()
+string Answer()
 {
-    // return "Up and running! :D";
-    return dummy;
+    return "Up and running! :D";
 }
