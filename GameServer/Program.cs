@@ -29,19 +29,21 @@ app.MapGet("/Samuel/Get/", () =>
 //     return "i got here";
 // }
 
-app.MapPost("/Paul/Set/", SetPos);
-app.MapPost("/Samuel/Set/", SetPos);
+app.MapPost("/Paul/Set/", SetPaul);
+app.MapPost("/Samuel/Set/", SetSamuel);
 
-void SetPos(Position p)
+void SetSamuel(Position p)
 {
     samuelCords = p;
+}
+void SetPaul(Position p)
+{
     paulCords = p;
 }
-
 
 app.Run();
 
 static string Answer()
 {
-    return "Test";
+    return "Up and running! :D";
 }

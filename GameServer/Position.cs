@@ -1,11 +1,16 @@
+using System.Text.Json.Serialization;
+
 public class Position
 {
-    public Position(int x, int y)
+    public Position(int x_, int y_)
     {
-        x = x;
-        y = y;
+        x = x_;
+        y = y_;
     }
 
+    [JsonPropertyName("x")]
     public int x { get; set; }
+
+    [JsonPropertyName("y")]
     public int y { get; set; }
 }
