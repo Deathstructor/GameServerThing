@@ -1,7 +1,3 @@
-using System.Security.AccessControl;
-using System.Numerics;
-using System.Text.Json;
-
 WebApplication app = WebApplication.Create();
 
 Position paulCords = new(100, 10);
@@ -20,15 +16,6 @@ app.MapGet("/Samuel/Get/", () =>
 {
     return samuelCords;
 });
-
-// Previous test
-// (JsonContent j) =>
-// {
-//     Position p = JsonSerializer.Deserialize<Position>(j.ToString());
-//     paulCords = p;
-
-//     return "i got here";
-// }
 
 app.MapPost("/Paul/Set/", SetPaul);
 app.MapPost("/Samuel/Set/", SetSamuel);
